@@ -22,7 +22,7 @@ conn = mariadb.connect(
 cur = conn.cursor()
 
 # DRIVERS
-drivers = pd.read_csv("drivers.csv")
+drivers = pd.read_csv("data/drivers.csv")
 for index, row in drivers.iterrows():
     cur.execute(
         "INSERT INTO drivers(id, name, surname, birthday, nationality) VALUES (?, ?, ?, ?, ?)",
@@ -30,7 +30,7 @@ for index, row in drivers.iterrows():
     )
 
 # CIRCUITS
-circuits = pd.read_csv("circuits.csv")
+circuits = pd.read_csv("data/circuits.csv")
 for index, row in circuits.iterrows():
     cur.execute(
         "INSERT INTO circuits(id, name, location, country) VALUES (?, ?, ?, ?)",
@@ -38,7 +38,7 @@ for index, row in circuits.iterrows():
     )
 
 # RACES
-races = pd.read_csv("races.csv")
+races = pd.read_csv("data/races.csv")
 for index, row in races.iterrows():
     cur.execute(
         "INSERT INTO races(id, year, round, circuit_id) VALUES (?, ?, ?, ?)",
@@ -46,7 +46,7 @@ for index, row in races.iterrows():
     )
 
 # LAP_TIMES
-lap_times = pd.read_csv("lap_times.csv")
+lap_times = pd.read_csv("data/lap_times.csv")
 # Use tqdm to show progress bar
 for index, row in tqdm(lap_times.iterrows(), total=lap_times.shape[0]):
     cur.execute(
