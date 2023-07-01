@@ -2,3 +2,7 @@ mariadb
 pandas
 tqdm
 keras
+scikit-learn
+tensorflow
+matplotlib
+seaborn

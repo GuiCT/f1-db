@@ -161,3 +161,6 @@ cython_debug/
 
 # CSV data
 data
+
+# RTX TOML
+.rtx.toml
